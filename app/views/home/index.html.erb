@@ -1,31 +1,28 @@
-<p>Lista de Produtos</p>
-<table>
-  <thead>
-    <th>Nome</th>
-    <th>Categoria</th>
-    <th>Preço</th>
-  </thead>
-  <tbody>
-
-    <% @products.each do |product| %>
-
-      <tr>
-        <td><%= product.name%></td>
-        <td><%= product.category%></td>
-        <td>R$<%= product.value%></td>
-
-        <% if product.selected.zero? %>
-          <td><%= link_to 'Selecionar Produto', product%></td>
-          
-        <% else %>
-          <td>Produto selecionado<td>
-          <td><%= button_to 'Cancelar seleção', product, :method => :put%></td>
-        <% end %>
-
-      </tr>
-
-    <% end %>
-    
-  </tbody>
-</table>
-<%= button_to 'Lista de reserva', checkout_path, :method => :get %>
+<%= stylesheet_link_tag 'style.css' %>
+<div class='content'>
+  <p class='title'>Lista de Produtos</p>
+  <table>
+    <thead>
+      <th>Nome</th>
+      <th>Categoria</th>
+      <th>Preço</th>
+    </thead>
+    <tbody>
+      <% @products.each do |product| %>
+        <tr>
+          <td class='t_area'><%= product.name%></td>
+          <td class='t_area'><%= product.category%></td>
+          <td class='t_area'>R$<%= product.value%></td>
+          <% if product.selected.zero? %>
+            <td class='link_area'>
+              <%= button_to 'Selecionar Produto', product, :method => :get,:class => 'select_link'%>
+            </td>
+          <% else %>
+            <td class='link_area'><%= button_to 'Cancelar seleção', product, :method => :put, :class => 'warning_text'%></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= button_to 'Lista de reserva', checkout_path, :method => :get, :class => 'checkout_button' %>
+</div>
