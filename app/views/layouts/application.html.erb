@@ -5,16 +5,15 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'style.css' %>
   </head>
-
   <body>
-  <div>
-    <%= button_to 'Loja', root_path, :method => :get %>
-    <%= button_to 'Cadastrar produto', new_product_path, :method => :get%>
-  </div>
+    <div class='navbar'>
+      <%= button_to 'Loja', root_path, :method => :get, :class => 'nav_btn' %>
+      <%= button_to 'Cadastrar produto', new_product_path, :method => :get, :class => 'nav_btn' %>
+    </div>
     <%= yield %>
   </body>
 </html>
