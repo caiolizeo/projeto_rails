@@ -5,14 +5,24 @@
     <th>Categoria</th>
     <th>Preço</th>
   </thead>
-
   <tbody>
+
     <% @products.each do |product| %>
+
       <tr>
         <td><%= product.name%></td>
         <td><%= product.category%></td>
         <td>R$<%= product.value%></td>
+
+        <% if product.selected.zero? %>
+          <td><%= link_to 'Selecionar Produto', product%></td>
+        <% else %>
+          <td>Produto selecionado<td>
+        <% end %>
+
       </tr>
+
     <% end %>
+    
   </tbody>
 </table>
