@@ -1,6 +1,5 @@
 class HomeController < ApplicationController
-
   def index
-      render plain: 'oi'
+      @products = Product.all
   end
 end

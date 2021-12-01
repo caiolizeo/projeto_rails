@@ -1,0 +1,18 @@
+<p>Lista de Produtos</p>
+<table border=1>
+  <thead>
+    <th>Nome</th>
+    <th>Categoria</th>
+    <th>Preço</th>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.name%></td>
+        <td><%= product.category%></td>
+        <td>R$<%= product.value%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
