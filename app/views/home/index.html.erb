@@ -16,8 +16,10 @@
 
         <% if product.selected.zero? %>
           <td><%= link_to 'Selecionar Produto', product%></td>
+          
         <% else %>
           <td>Produto selecionado<td>
+          <td><%= button_to 'Cancelar seleção', product, :method => :put%></td>
         <% end %>
 
       </tr>
@@ -26,3 +28,4 @@
     
   </tbody>
 </table>
+<%= button_to 'Lista de reserva', checkout_path, :method => :get %>

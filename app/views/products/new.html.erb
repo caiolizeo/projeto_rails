@@ -1,0 +1,20 @@
+<%= form_with model: @product do |f| %>
+  <div>
+    <%= f.label 'Nome'%>
+    <%= f.text_field :name%>
+  </div>
+  <div>
+    <%= f.label 'Descrição'%>
+    <%= f.text_area :description%>
+  </div>
+  <div>
+    <%= f.label 'Categoria'%>
+    <%= f.text_field :category%>
+  </div>
+  <div>
+    <%= f.label 'Preço'%>
+    <%= f.number_field :value, step: 0.01%>
+  </div>
+  
+  <%=f.submit 'Salvar'%>
+<% end %>
