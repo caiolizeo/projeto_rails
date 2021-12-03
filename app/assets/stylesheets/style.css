@@ -1,3 +1,4 @@
+/* === Index ===*/
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 
 * {
@@ -6,11 +7,9 @@
 
 body {
   margin: 0;
-  background-color: #222222;
-  color: #ffffff
 }
 
-.content {
+.container {
   margin: 15px;
 }
 
@@ -38,15 +37,15 @@ body {
 
 .title {
   font-size: 32px;
-  margin: 40px 0px 40px;
-
+  margin: 25px 0px 25px;
+  font-weight: bold;
 }
 
 .t_area {
-  background-color: #2f2f2f;
+  background-color: #e0e0e0;
   border-style: solid;
   border-width: 2px;
-  border-color: #222222;
+  border-color: #ffffff;
   border-left: 0;
   border-radius: 5px;
   padding: 5px 25px 5px;
@@ -66,12 +65,11 @@ body {
   width: 100%;
 }
 
-.warning_text:hover{
+.warning_text:hover {
   color: #ffffff;
   background-color: #9c302a;
   cursor: pointer;
 }
-
 
 .select_link {
   border: 0;
@@ -88,8 +86,8 @@ body {
   cursor: pointer;
 }
 
-.checkout_button{
-  background-color: #bbbbbbc7;
+.checkout_button {
+  background-color: #aaaaaa;
   color: #222222;
   margin-top: 35px;
   padding: 5px;
@@ -99,7 +97,87 @@ body {
   cursor: pointer;
 }
 
-.checkout_button:hover{
-  background-color: #6b6b6bc7;
+.checkout_button:hover {
+  background-color: #4e4e4ec7;
   color: #ffffff;
+}
+
+
+/* === show === */
+
+.product {
+  margin-bottom: 20px;
+}
+
+.select_button {
+  color: #192b1d;
+  background-color: #79d18e;
+  margin-top: 5px;
+  padding: 5px;
+  font-size: 20px;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.select_button:hover {
+  color: #ffffff;
+  background-color: #49854f;
+}
+
+
+/* === New === */
+
+.form_area {
+  display: flex;
+  flex-direction: column;
+}
+
+textarea {
+  resize: none;
+}
+
+.title_area {
+  width: 200px;
+}
+
+label {
+  width: 100px;
+}
+
+.form, textarea {
+  border-radius: 5px;
+  border: 1px;
+  border-style: solid;
+  border-color: #222222;
+  height: 30px;
+}
+
+textarea{
+  height: 80px;
+}
+
+
+/* === Media === */
+
+@media (max-width: 500px) {
+    table {
+      width: 100%;
+    }
+
+    .t_area {
+
+      padding: 0px;
+    }
+
+    .link_area {
+     text-align: left;
+    }
+
+    .select_link, .warning_text {
+      display: inline-block;
+      width: 100px;
+      white-space: normal;
+      font-size: 18px;
+    }
 }

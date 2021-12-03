@@ -1,21 +1,22 @@
-<p>Detalhes do produto</p>
-<div>
+<div class="container">
+  <p class="title">Detalhes do produto</p>
   <div>
-    <strong>Nome</strong>
-    <%=@product.name%>
+    <div class="product">
+      <strong>Nome:</strong>
+      <%=@product.name%>
+    </div>
+    <div class="product">
+      <strong>Categoria:</strong>
+      <%=@product.category%>
+    </div>
+    <div class="product">
+      <strong>Descrição:</strong>
+      <%=@product.description%>
+    </div>
+    <div class="product">
+      <strong>Preço:</strong>
+      R$<%=@product.value%>
+    </div>
+    <%= button_to 'Selecionar', @product, :method => :put, :class =>'select_button'%>
   </div>
-  <div>
-    <strong>Categoria</strong>
-    <%=@product.category%>
-  </div>
-  <div>
-    <strong>Descrição</strong>
-    <%=@product.description%>
-  </div>
-  <div>
-    <strong>Preço</strong>
-    R$<%=@product.value%>
-  </div>
-
-  <%= button_to 'Selecionar', @product, :method => :put%>
 </div>

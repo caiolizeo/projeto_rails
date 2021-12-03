@@ -1,23 +1,25 @@
-<%if Product.where(selected: 1).size.positive?%>
-  <p>Finalizar Reserva</p>
-  <table>
-    <thead>
-      <th>Nome</th>
-      <th>Categoria</th>
-      <th>Preço</th>
-    </thead>
-    <tbody>
-      <% @products.each do |product| %>
-        <tr>
-          <td><%= product.name%></td>
-          <td><%= product.category%></td>
-          <td>R$<%= product.value%></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-  <%= button_to 'Finalizar reserva', checkout_finish_path, :method => :delete%>
-<%else%>
-  <p>Nenhum produto na lista de reserva!</p>
-  <%= button_to 'Voltar', root_path, :method => :get%>
-<%end%>
+<div class="container">
+  <%if Product.where(selected: 1).size.positive?%>
+    <p class='title'>Lista de Reserva</p>
+    <table>
+      <thead>
+        <th>Nome</th>
+        <th>Categoria</th>
+        <th>Preço</th>
+      </thead>
+      <tbody>
+        <% @products.each do |product| %>
+          <tr>
+            <td class='t_area'><%= product.name%></td>
+            <td class='t_area'><%= product.category%></td>
+            <td class='t_area'>R$<%= product.value%></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <%= button_to 'Finalizar reserva', checkout_finish_path, :method => :delete, :class => 'checkout_button'%>
+  <%else%>
+    <p class='title'>Nenhum produto na lista de reserva!</p>
+    <%= button_to 'Voltar', root_path, :method => :get, :class => 'checkout_button'%>
+  <%end%>
+</div>

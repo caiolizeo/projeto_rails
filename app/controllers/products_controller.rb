@@ -9,15 +9,11 @@ class ProductsController < ApplicationController
   end
   
   def create
-    @product = Product.create(name: params[:product][:name],
-                           description: params[:product][:description],
-                           category: params[:product][:category],
-                           value: params[:product][:value],
-                           selected: 0
-                          )
-    
+    @product = Product.new(product_params)
+    @product.selected = 0
+    @product.save
     redirect_to root_path
-    
+   
   end
 
   def update
@@ -43,4 +39,9 @@ class ProductsController < ApplicationController
     redirect_to root_path
   end
 
+  private
+
+  def product_params
+    params.require(:product).permit(:name, :description, :category, :value)
+  end
 end
